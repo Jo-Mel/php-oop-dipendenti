@@ -6,11 +6,18 @@ Aggiungere 1 trait  -->
 require_once __DIR__ . '/classes/Dipendente.php';
 require_once __DIR__ . '/classes/DatiDipendente.php';
 
+try{
 $dipendente1 = new Dipendente("Esempio123", "J", "M");
-var_dump($dipendente1);
+echo $dipendente1;
+} catch (Exeption $e) {
+    echo 'Eccezione: ' . $e->getMessage();
+}
 
+try {
 $datiProfilo1 = new DatiDipendente('Es456', 'X', 'Y', 'MMQMNNO80M12Z12Y', 'via tot', 'impiegato', '30000');
-
 $datiProfilo1->contract('Indeterminato');
 
-var_dump($datiProfilo1);
+echo $datiProfilo1;
+} catch (Exeption $e) {
+    echo 'Eccezione: ' . $e->getMessage();
+}

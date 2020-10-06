@@ -7,15 +7,15 @@ class Dipendente {
     public function __construct($_codice_dipendente, $_nome, $_cognome){
 
         if (empty($_codice_dipendente)) {
-            die('non è stato inserito il codice dipendente');
+           throw new Exception('non è stato inserito il codice dipendente');
         }
 
         if (empty($_nome)) {
-            die('non è stato inserito il nome');
+           throw new Exception('non è stato inserito il nome');
         }
 
         if (empty($_cognome)) {
-            die('non è stato inserito il cognome');
+            throw new Exception('non è stato inserito il cognome');
         }
 
         $this->codiceDipendente = $_codice_dipendente;
@@ -26,7 +26,7 @@ class Dipendente {
 
     public function setNome($_nome) {
         if (is_numeric($_nome)) {
-            die('il nome non è valido');
+            throw new Exception('il nome non è valido');
         }
         return $this->nome = $_nome;
     }
@@ -37,7 +37,7 @@ class Dipendente {
 
     public function setCognome($_cognome) {
         if (is_numeric($_cognome)) {
-            die('il cognome non è valido');
+            throw new Exception('il cognome non è valido');
         }
         return $this->cognome = $_cognome;
     }
@@ -45,4 +45,9 @@ class Dipendente {
     public function getCognome() {
         return $this->cognome;
     }
+
+    public function __toString() {
+        return "<br> Codice dipendente: ".$this->codiceDipendente."<br> Nome: ".$this->nome."<br> Cognome: ".$this->cognome;
+    }
+
 }

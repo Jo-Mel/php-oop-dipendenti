@@ -5,7 +5,7 @@ trait Contratto {
 
     public function contract($_contratto) {
         if (empty($_contratto)) {
-                die('Nessun tipo di contratto inserito');
+                throw new Exception('Nessun tipo di contratto inserito');
             }
             return $this->contratto = $_contratto;
         }  
