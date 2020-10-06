@@ -35,14 +35,14 @@ class Dipendente {
         return $this->nome;
     }
 
-    public function setCognome($_nome) {
-        if (is_numeric($_nome)) {
+    public function setCognome($_cognome) {
+        if (is_numeric($_cognome)) {
             die('il cognome non è valido');
         }
-        return $this->nome = $_nome;
+        return $this->cognome = $_cognome;
     }
 
     public function getCognome() {
-        return $this->nome;
+        return $this->cognome;
     }
 }
